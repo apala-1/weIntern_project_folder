@@ -31,9 +31,9 @@ def get_non_empty(value):
 
 def add_student():
     print("Add student here: ")
-    name = input("Name: ")
-    age = input("Age: ")
-    grade = input("Grade: ")
+    name = get_non_empty("Name: ")
+    age = get_valid_int("Age: ")
+    grade = get_non_empty("Grade: ")
 
     student = {
         "id": len(students) + 1,
