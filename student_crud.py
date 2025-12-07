@@ -8,3 +8,9 @@ if os.path.exists(filename):
         students = json.load(f)
 else:
     students = []
+
+def save_data():
+    """Saves the students list to JSON file."""
+    with open(filename, "w") as f:
+        json.dump(students, f, indent=4)
+
