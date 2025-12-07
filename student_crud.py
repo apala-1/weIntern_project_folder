@@ -92,4 +92,10 @@ def delete_student():
 
 def view_students():
     print("View Students here: \n")
-    print(students)
+    print(f"{'ID':<5}{'Name':<20}{'Age':<5}{'Grade':<5}")
+    print("-" * 35)
+
+    for s in students:
+        print(f"{s['id']:<5}{s['name']:<20}{s['age']:<5}{s['grade']:<5}")
+       
+    print()
