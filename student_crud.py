@@ -76,14 +76,10 @@ def delete_student():
 
     global students
     previous_length = len(students)
-    print(students)
-    print(previous_length)
     updated_students = []
     for s in students:
         if s['id'] == int(student_id):
             found = True
-            print("s: ", s)
-            print("students: ", students)
         else:
             updated_students.append(s)
 
@@ -93,3 +89,7 @@ def delete_student():
         print("Deletion sucessful.\n")
     else:
         print("Student not found.\n")   
+
+def view_students():
+    print("View Students here: \n")
+    print(students)
