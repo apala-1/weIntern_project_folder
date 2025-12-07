@@ -31,9 +31,9 @@ def get_non_empty(value):
 
 def add_student():
     print("Add student here: \n")
-    name = get_non_empty("Name: ")
+    name = input("Name: ")
     age = get_valid_int("Age: ")
-    grade = get_non_empty("Grade: ")
+    grade = input("Grade: ")
 
     student = {
         "id": len(students) + 1,
@@ -44,7 +44,7 @@ def add_student():
 
     students.append(student)
     save_data()
-    print("The student is added.")
+    print("The student is added.\n")
 
 def update_student():
     print("Update student here: \n")
@@ -65,7 +65,31 @@ def update_student():
                 s['grade'] = new_grade
 
             save_data()
-            print("Update Sucessful.")
+            print("Update Sucessful.\n")
             return
 
-        print("Student not found.")
+        print("Student not found.\n")
+
+def delete_student():
+    print("Delete student here: \n")
+    student_id = input("Enter Student ID: ")
+
+    global students
+    previous_length = len(students)
+    print(students)
+    print(previous_length)
+    updated_students = []
+    for s in students:
+        if s['id'] == int(student_id):
+            found = True
+            print("s: ", s)
+            print("students: ", students)
+        else:
+            updated_students.append(s)
+
+    if len(updated_students) < previous_length:
+        students = updated_students
+        save_data()
+        print("Deletion sucessful.\n")
+    else:
+        print("Student not found.\n")   
