@@ -30,7 +30,7 @@ def get_non_empty(value):
         print("This field cannot be empty.")
 
 def add_student():
-    print("Add student here: ")
+    print("Add student here: \n")
     name = get_non_empty("Name: ")
     age = get_valid_int("Age: ")
     grade = get_non_empty("Grade: ")
@@ -45,3 +45,27 @@ def add_student():
     students.append(student)
     save_data()
     print("The student is added.")
+
+def update_student():
+    print("Update student here: \n")
+    student_id = get_valid_int("Enter ID: ")
+
+    for s in students:
+        if s["id"] == student_id:
+            new_name = input(f"Name [{s['name']}]: ").strip()
+            if new_name:
+                s['name'] = new_name
+
+            new_age = input(f"Age [{s['age']}]: ").strip()
+            if new_age:
+                s['age'] = new_age
+
+            new_grade = input(f"Grade: [{s['grade']}]: ").strip()
+            if new_grade:
+                s['grade'] = new_grade
+
+            save_data()
+            print("Update Sucessful.")
+            return
+
+        print("Student not found.")
