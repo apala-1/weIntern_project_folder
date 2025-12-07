@@ -30,6 +30,7 @@ def get_non_empty(value):
         print("This field cannot be empty.")
 
 def add_student():
+    """Adds student to the list."""
     print("Add student here: \n")
     name = input("Name: ")
     age = get_valid_int("Age: ")
@@ -47,6 +48,7 @@ def add_student():
     print("The student is added.\n")
 
 def update_student():
+    """Updates the student in the list"""
     print("Update student here: \n")
     student_id = get_valid_int("Enter ID: ")
 
@@ -71,6 +73,7 @@ def update_student():
         print("Student not found.\n")
 
 def delete_student():
+    """Deletes the student in the list."""
     print("Delete student here: \n")
     student_id = input("Enter Student ID: ")
 
@@ -91,6 +94,7 @@ def delete_student():
         print("Student not found.\n")   
 
 def view_students():
+    """Returns the students list in a tabular format."""
     print("View Students here: \n")
     print(f"{'ID':<5}{'Name':<20}{'Age':<5}{'Grade':<5}")
     print("-" * 35)
@@ -101,6 +105,7 @@ def view_students():
     print()
 
 def menu():
+    """Shows users what the system can do."""
     print("Student CRUD System: \n")
     print("1. Add Student")
     print("2. View Students")
@@ -108,6 +113,8 @@ def menu():
     print("4. Delete Student")
     print("5. Exit")
 
+
+# main function
 while True:
     menu()
     user_choice = input("Choose an option: ")
