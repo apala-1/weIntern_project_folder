@@ -99,3 +99,28 @@ def view_students():
         print(f"{s['id']:<5}{s['name']:<20}{s['age']:<5}{s['grade']:<5}")
        
     print()
+
+def menu():
+    print("Student CRUD System: \n")
+    print("1. Add Student")
+    print("2. View Students")
+    print("3. Update Student")
+    print("4. Delete Student")
+    print("5. Exit")
+
+while True:
+    menu()
+    user_choice = input("Choose an option: ")
+
+    if user_choice == "1":
+        add_student()
+    elif user_choice == "2":
+        view_students()
+    elif user_choice == "3":
+        update_student()
+    elif user_choice == "4":
+        delete_student()
+    elif user_choice == "5":
+        break
+    else:
+        print("Invalid choice.\n")
